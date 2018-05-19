@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: node:10-stretch
+    working_directory: ~/spf-validator
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run export
+      - run: apt-get update
+      - run: apt-get install -y --no-install-recommends awscli tree
+      - run: tree -ah out
+      # TODO: upload to AWS S3
