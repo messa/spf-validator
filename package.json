@@ -2,7 +2,8 @@
   "name": "spf-validator",
   "version": "0.0.1",
   "description": "SPF validator website",
-  "main": "index.js",
+  "homepage": "https://github.com/messa/spf-validator",
+  "repository": "github:messa/spf-validator",
   "scripts": {
     "dev": "next",
     "build": "next build",
