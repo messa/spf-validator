@@ -13,7 +13,6 @@ export default class extends React.Component {
 
   handleDomainChange = (event) => {
     let domainValue = event.target.value
-    domainValue = domainValue.replace(/ +/, '')
     this.setState({ domainValue })
     this.props.onChangeDomain(domainValue)
   }
@@ -22,11 +21,13 @@ export default class extends React.Component {
 
     return (
       <form onSubmit={this.handleFormSubmit}>
-        <StyledTextInput
-          onChange={this.handleDomainChange}
-          value={this.state.domainValue}
-          placeholder={this.props.defaultDomain}
-        />
+        <div style={{ textAlign: 'center' }}>
+          <StyledTextInput
+            onChange={this.handleDomainChange}
+            value={this.state.domainValue}
+            placeholder={this.props.defaultDomain}
+          />
+        </div>
       </form>
     )
   }
